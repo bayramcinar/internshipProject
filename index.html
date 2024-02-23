@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Employee List</title>
     <link href="./style.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="node_modules/tailwindcss/dist/tailwind.min.css"
     />
-    <link
-      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -22,153 +19,236 @@
     />
   </head>
   <body>
-    <div class="h-screen my-auto flex items-center justify-center">
-      <div class="lg:flex mx-2 lg:mx-48 lg:min-h-[700px]">
-        <div
-          class="imgArea flex-grow w-[800px] flex flex-col items-center justify-center py-5 lg:py-10 lg:px-14 rounded-t-3xl lg:rounded-t-none lg:rounded-l-xl"
-        >
-          <div class="m-8">
-            <img
-              src="./staff.png"
-              class="w-24 h-24 lg:w-40 lg:h-40 imgFoto p-1 lg:p-2 rounded-full"
-              alt=""
+    <div class="h-screen flex flex-col justify-center mx-auto max-w-[1200px]">
+      <div class="bg-white rounded-xl p-8">
+        <!-- TİTLE AND SEARCH BAR AREA -->
+        <div class="mx-2">
+          <h1 class="text-gray-600 font-semibold text-2xl py-4 text-start">
+            Personel Listesi
+          </h1>
+          <div class="justify-between flex">
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="Ara..."
+              class="bg-[#e6eaf3] rounded-xl py-2 px-2 lg:px-4 mb-3 my-auto"
             />
-          </div>
-          <div>
-            <h1
-              class="text-sm md:text-md lg:text-xl xl:text-2xl font-extrabold text-center"
+            <a
+              href="addEmployee.html"
+              class="bg-indigo-600 py-2 my-2 px-4 text-white font-semibold rounded-xl mb-3"
             >
-              Perosonel Ekle
-            </h1>
-            <h1 class="text-sm xl:text-md font-medium text-center my-4">
-              Forumda bulunan bilgileri doldurarak personel kaydı
-              yapabilirsiniz.
-            </h1>
+              <i class="fa-solid fa-plus"></i>
+              Ekle
+            </a>
           </div>
-          <i
-            class="fa-solid fa-circle-chevron-right md:text-2xl xl:text-4xl"
-          ></i>
         </div>
+        <!-- TABLE FOR LG DEVİCES -->
+        <table class="hidden lg:block">
+          <thead>
+            <tr class="text-gray-600 bg-[#dde4ee] font-normal">
+              <th class="px-6 py-5 rounded-l-xl">ID</th>
+              <th class="px-6 py-5">Oluşturma Tarihi</th>
+              <th class="px-6 py-5">Ad Soyad</th>
+              <th class="px-6 py-5">Laboratuvar</th>
+              <th class="px-6 py-5">Sicil No</th>
+              <th class="px-6 py-5">Personel Grubu</th>
+              <th class="px-6 py-5">İşe Başlama Tarihi</th>
+              <th class="px-6 py-5 rounded-r-xl">İşten Çıkış Tarihi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="p-5 font-medium">1</th>
+              <th class="p-5 font-medium">13.02.2024</th>
+              <th class="p-5 font-medium">Bayram Çınar</th>
+              <th class="p-5 font-medium">Laboratuvar 1</th>
+              <th class="p-5 font-medium">123456789</th>
+              <th class="p-5 font-medium">Perosonel 1</th>
+              <th class="p-5 font-medium">13.02.2024</th>
+              <th class="p-5 font-medium">13.02.2025</th>
+            </tr>
+          </tbody>
+        </table>
+        <!-- CARD DESING FOR SMALL DEVICES  -->
         <div
-          class="container mx-auto formArea flex-grow bg-white rounded-b-3xl lg:rounded-r-3xl lg:rounded-b-none"
+          class="cardList lg:hidden flex flex-col items-center justify-center"
         >
-          <form class="max-w-lg mx-auto p-8">
-            <div class="mb-4 flex">
-              <label
-                for="laboratory"
-                class="block text-sm font-medium text-gray-700 my-auto mr-2 w-1/3"
-                >Laboratuvar</label
+          <div
+            class="cardModule bg-gray-100 rounded-3xl flex w-full max-w-[300px]"
+          >
+            <div class="leftArea bg-indigo-600 p-3 rounded-l-2xl m-3 mr-0">
+              <h1 class="text-xs font-semibold text-white pb-2">Ad Soyad</h1>
+              <div
+                class="nameArea flex bg-white text-indigo-600 p-2 rounded-xl mb-3"
               >
-              <select
-                id="laboratory"
-                name="laboratory"
-                class="mt-1 block border-gray-300 rounded-md shadow-sm sm:text-sm bg-gray-100 text-gray-600 p-3 w-2/3"
+                <i
+                  class="fa-solid fa-user mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">Hüseyin Çınar</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-white pb-2">
+                Oluşturma Tarihi
+              </h1>
+              <div
+                class="createDateArea flex bg-white text-indigo-600 p-2 rounded-xl mb-3"
               >
-                <option>Seçiniz</option>
-                <option>Laboratuvar 1</option>
-                <option>Laboratuvar 2</option>
-                <option>Laboratuvar 3</option>
-              </select>
+                <i
+                  class="fa-solid fa-calendar-days mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">13.02.2002</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-white pb-2">Sicil No</h1>
+              <div
+                class="nameArea flex bg-white text-indigo-600 p-2 rounded-xl"
+              >
+                <i
+                  class="fa-solid fa-id-card mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">123456789</h1>
+              </div>
             </div>
-            <div class="mb-4 flex">
-              <label
-                for="name"
-                class="block text-sm font-medium text-gray-700 my-auto mr-2 w-1/3"
-                >Adı Soyadı</label
+            <div class="rightArea bg-white p-3 rounded-r-2xl m-3 ml-0">
+              <h1 class="text-xs font-semibold text-indigo-600 pb-2">
+                Laboratuvar Grubu
+              </h1>
+              <div
+                class="sicilNumberArea flex bg-indigo-600 text-white p-2 rounded-xl mb-3"
               >
-              <input
-                type="text"
-                name="name"
-                placeholder="Ad Soyad"
-                id="name"
-                autocomplete="name"
-                class="mt-1 block border-gray-300 rounded-md shadow-sm sm:text-sm bg-gray-100 text-gray-600 p-3 w-2/3"
-              />
+                <i
+                  class="fa-solid fa-flask mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">Laboratuvar 1</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-indigo-600 pb-2">
+                Personel Grubu
+              </h1>
+              <div
+                class="startDateArea flex bg-indigo-600 text-white p-2 rounded-xl mb-3"
+              >
+                <i
+                  class="fa-solid fa-users mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">Perosonel 1</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-indigo-600 pb-2">
+                İşe Başlama Tarihi
+              </h1>
+              <div
+                class="nameArea flex bg-indigo-600 text-white p-2 rounded-xl"
+              >
+                <i
+                  class="fa-solid fa-clock mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">13.02.2024</h1>
+              </div>
             </div>
-            <div class="mb-4 flex">
-              <label
-                for="employee_id"
-                class="block text-sm font-medium text-gray-700 my-auto mr-2 w-1/3"
-                >Sicil No</label
+          </div>
+          <div
+            class="cardModule bg-gray-100 rounded-3xl flex w-full max-w-[300px] mb-4"
+          >
+            <div class="leftArea bg-indigo-600 p-3 rounded-l-2xl m-3 mr-0">
+              <h1 class="text-xs font-semibold text-white pb-2">Ad Soyad</h1>
+              <div
+                class="nameArea flex bg-white text-indigo-600 p-2 rounded-xl mb-3"
               >
-              <input
-                type="text"
-                placeholder="Sicil No"
-                name="employee_id"
-                id="employee_id"
-                autocomplete="employee_id"
-                class="mt-1 block w-2/3 border-gray-300 rounded-md shadow-sm sm:text-sm bg-gray-100 text-gray-600 p-3"
-              />
+                <i
+                  class="fa-solid fa-user mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">Bayram Çınar</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-white pb-2">
+                Oluşturma Tarihi
+              </h1>
+              <div
+                class="createDateArea flex bg-white text-indigo-600 p-2 rounded-xl mb-3"
+              >
+                <i
+                  class="fa-solid fa-calendar-days mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">13.02.2002</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-white pb-2">Sicil No</h1>
+              <div
+                class="nameArea flex bg-white text-indigo-600 p-2 rounded-xl"
+              >
+                <i
+                  class="fa-solid fa-id-card mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">123456789</h1>
+              </div>
             </div>
-            <div class="mb-4 flex">
-              <label
-                for="employee_group"
-                class="block text-sm font-medium text-gray-700 my-auto mr-2 w-1/3"
-                >Personel Grubu</label
+            <div class="rightArea bg-white p-3 rounded-r-2xl m-3 ml-0">
+              <h1 class="text-xs font-semibold text-indigo-600 pb-2">
+                Laboratuvar Grubu
+              </h1>
+              <div
+                class="sicilNumberArea flex bg-indigo-600 text-white p-2 rounded-xl mb-3"
               >
-              <select
-                id="employee_group"
-                name="employee_group"
-                class="mt-1 block w-2/3 border-gray-300 rounded-md shadow-sm sm:text-sm bg-gray-100 text-gray-600 p-3"
+                <i
+                  class="fa-solid fa-flask mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">Laboratuvar 1</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-indigo-600 pb-2">
+                Personel Grubu
+              </h1>
+              <div
+                class="startDateArea flex bg-indigo-600 text-white p-2 rounded-xl mb-3"
               >
-                <option>Seçiniz</option>
-                <option>Grup 1</option>
-                <option>Grup 2</option>
-                <option>Grup 3</option>
-              </select>
+                <i
+                  class="fa-solid fa-users mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">Perosonel 1</h1>
+              </div>
+              <h1 class="text-xs font-semibold text-indigo-600 pb-2">
+                İşe Başlama Tarihi
+              </h1>
+              <div
+                class="nameArea flex bg-indigo-600 text-white p-2 rounded-xl"
+              >
+                <i
+                  class="fa-solid fa-clock mr-2 flex items-center justify-center"
+                ></i>
+                <h1 class="font-semibold text-xs">13.02.2024</h1>
+              </div>
             </div>
-            <div class="mb-4 flex">
-              <label
-                for="lab_group"
-                class="block text-sm font-medium text-gray-700 my-auto mr-2 w-1/3"
-                >Laboratuvar Grubu</label
+          </div>
+        </div>
+        <!-- PAGINATION AREA -->
+        <div class="lg:flex lg:justify-between mt-4">
+          <div class="flex justify-center items-center">
+            <h1 class="text-gray-600 font-semibold text-sm">Sayfada</h1>
+            <select
+              class="bg-gray-200 rounded-xl py-1 text-gray-600 font-semibold px-4 mb-3 my-auto mx-2"
+            >
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+            </select>
+            <h1 class="text-gray-600 font-semibold text-sm">Kayıt Göster</h1>
+          </div>
+          <div
+            class="flex mt-4 lg:mt-0 items-center justify-center w-full lg:w-auto flex-wrap"
+          >
+            <button
+              class="bg-gray-200 hover:bg-gray-300 text-gray-600 font-bold py-2 px-4 rounded-xl"
+            >
+              Önceki
+            </button>
+            <ul>
+              <li
+                class="py-2 px-4 mx-2 bg-indigo-600 hover:bg-indigo-800 text-white rounded-xl font-semibold"
               >
-              <select
-                id="lab_group"
-                name="lab_group"
-                class="mt-1 block w-2/3 border-gray-300 rounded-md shadow-sm sm:text-sm bg-gray-100 text-gray-600 p-3"
-              >
-                <option>Seçiniz</option>
-                <option>Grup A</option>
-                <option>Grup B</option>
-                <option>Grup C</option>
-              </select>
-            </div>
-            <div class="mb-4 flex">
-              <label
-                for="start_date"
-                class="block text-sm font-medium text-gray-700 my-auto mr-2 w-1/3"
-                >İşe Başlama Tarihi</label
-              >
-              <input
-                type="date"
-                id="start_date"
-                name="start_date"
-                class="mt-1 block w-2/3 border-gray-300 rounded-md shadow-sm sm:text-sm bg-gray-100 text-gray-600 p-3"
-              />
-            </div>
-            <div class="mb-4 flex">
-              <label
-                for="end_date"
-                class="block text-sm font-medium text-gray-700 my-auto mr-2 w-1/3"
-                >İşten Çıkış Tarihi</label
-              >
-              <input
-                type="date"
-                id="end_date"
-                name="end_date"
-                class="mt-1 block w-2/3 border-gray-300 rounded-md shadow-sm sm:text-sm bg-gray-100 text-gray-600 p-3"
-              />
-            </div>
-            <div class="mt-6 flex items-center justify-center">
-              <button
-                type="submit"
-                class="inline-flex w-full justify-center text-center items-center px-10 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Kaydet
-              </button>
-            </div>
-          </form>
+                1
+              </li>
+            </ul>
+            <button
+              class="bg-gray-200 hover:bg-gray-300 text-gray-600 font-bold py-2 px-4 rounded-xl"
+            >
+              Sonraki
+            </button>
+          </div>
         </div>
       </div>
     </div>
