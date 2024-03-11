@@ -26,25 +26,32 @@
           <h1 class="text-gray-600 font-semibold text-2xl py-4 text-start">
             Personel Listesi
           </h1>
-          <div class="justify-between flex">
+          <div class="justify-between flex lg:flex-row flex-col">
             <input
               type="text"
               id="search"
               name="search"
               placeholder="Ara..."
-              class="bg-[#e6eaf3] max-w-[100px] text-xs lg:text-md lg:w-auto rounded-xl py-2 px-2 lg:px-4 mb-3 my-auto"
+              class="bg-[#e6eaf3] text-xs lg:text-md lg:w-auto rounded-xl py-2 px-2 lg:px-4 mb-3 my-auto"
             />
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center lg:flex-row flex-col">
+              <a
+                href="extraTime.html"
+                class="bg-indigo-600 text-xs lg:text-md lg:mr-2 py-2 px-4 text-white font-semibold rounded-xl mb-3 w-full text-center lg:w-auto"
+              >
+                <i class="fa-solid fa-plus"></i>
+                Fazla Mesai
+              </a>
               <a
                 href="addEmployee.html"
-                class="bg-indigo-600 text-xs lg:text-md mr-2 py-2 my-2 px-4 text-white font-semibold rounded-xl mb-3"
+                class="bg-indigo-600 text-xs lg:text-md lg:mr-2 py-2 px-4 text-white font-semibold rounded-xl mb-3 w-full text-center lg:w-auto"
               >
                 <i class="fa-solid fa-plus"></i>
                 Ekle
               </a>
               <a
                 href="giveBreak.html"
-                class="bg-indigo-600 py-2 text-xs text-md my-2 px-4 text-white font-semibold rounded-xl mb-3"
+                class="bg-indigo-600 py-2 text-xs text-md px-4 text-white font-semibold rounded-xl mb-3 w-full text-center lg:w-auto"
               >
                 <i class="fa-solid fa-plus"></i>
                 İzin Girişi
@@ -79,12 +86,94 @@
               <th class="p-5 font-medium">13.02.2024</th>
               <th class="p-5 font-medium">13.02.2025</th>
             </tr>
+            <tr>
+              <th class="p-5 font-medium">1</th>
+              <th class="p-5 font-medium">13.02.2024</th>
+              <th class="p-5 font-medium">Bayram Çınar</th>
+              <th class="p-5 font-medium">Laboratuvar 1</th>
+              <th class="p-5 font-medium">Grup A</th>
+              <th class="p-5 font-medium">123456789</th>
+              <th class="p-5 font-medium">Perosonel 1</th>
+              <th class="p-5 font-medium">13.02.2024</th>
+              <th class="p-5 font-medium">13.02.2025</th>
+            </tr>
           </tbody>
         </table>
         <!-- CARD DESING FOR SMALL DEVICES  -->
         <div
           class="cardList lg:hidden flex flex-col items-center justify-center"
         >
+          <div
+            class="cardModule bg-gray-100 rounded-3xl flex flex-col w-full px-2 py-3 mb-3"
+          >
+            <div
+              class="nameArea flex items-center justify-center w-full pb-0 text-gray-700"
+            >
+              <div class="flex">
+                <h1 class="font-semibold text-2xl mr-1">Bayram</h1>
+                <h1 class="text-2xl w-full">Çınar</h1>
+              </div>
+            </div>
+            <div class="labNameArea py-1 pb-2">
+              <h1 class="text-sm text-center text-gray-600 font-semibold">
+                SBÜ Kartal DR Lütfü Kırdar Şehir Hastanesi Merkez LAB
+              </h1>
+            </div>
+            <div class="otherInfos border-l-2 border-r-2 border-gray-400 mx-1">
+              <div class="flex justify-start items-center py-1 px-4 labGroup">
+                <i
+                  class="fa-solid fa-flask mr-1 text-xs flex items-center justify-center"
+                ></i>
+                <h1 class="text-sm font-bold mr-1 w-[55%]">
+                  Laboratuvar Grubu
+                </h1>
+                <h1 class="text-xs font-medium text-gray-600">: Grup A</h1>
+              </div>
+              <div
+                class="flex justify-start items-center py-1 px-4 sicilNumber"
+              >
+                <i
+                  class="fa-solid fa-id-card mr-1 text-xs flex items-center justify-center"
+                ></i>
+                <h1 class="text-sm font-bold mr-1 w-[55%]">Sicil No</h1>
+                <h1 class="text-xs font-medium text-gray-600">: 123456789</h1>
+              </div>
+              <div
+                class="flex justify-start items-center py-1 px-4 employeeGroup"
+              >
+                <i
+                  class="fa-solid fa-user-group mr-1 text-xs flex items-center justify-center"
+                ></i>
+                <h1 class="text-sm font-bold mr-1 w-[55%]">Personel Grubu</h1>
+                <h1 class="text-xs font-medium text-gray-600">: Personel 1</h1>
+              </div>
+              <div class="flex justify-start items-center py-1 px-4 startDate">
+                <i
+                  class="fa-solid fa-calendar-days mr-1 text-xs flex items-center justify-center"
+                ></i>
+                <h1 class="text-sm font-bold mr-1 w-[55%]">Oluşturma Tarihi</h1>
+                <h1 class="text-xs font-medium text-gray-600">: 13.02.2024</h1>
+              </div>
+              <div class="flex justify-start items-center py-1 px-4 startDate">
+                <i
+                  class="fa-solid fa-clock mr-1 text-xs flex items-center justify-center"
+                ></i>
+                <h1 class="text-sm font-bold mr-1 w-[55%]">
+                  İşe Başlama Tarihi
+                </h1>
+                <h1 class="text-xs font-medium text-gray-600">: 13.02.2024</h1>
+              </div>
+              <div class="flex justify-start items-center py-1 px-4 finishDate">
+                <i
+                  class="fa-regular fa-clock mr-1 text-xs flex items-center justify-center"
+                ></i>
+                <h1 class="text-sm font-bold mr-1 w-[55%]">
+                  İşten Çıkış Tarihi
+                </h1>
+                <h1 class="text-xs font-medium text-gray-600">: 13.02.2025</h1>
+              </div>
+            </div>
+          </div>
           <div
             class="cardModule bg-gray-100 rounded-3xl flex flex-col w-full px-2 py-3 mb-3"
           >
